@@ -17,6 +17,10 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+        @charset "UTF-8";
+        [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}
+    </style>		
 		
        <!--Icones-->
        <link rel="shortcut icon" href="img/ico/favicon.png">
@@ -24,37 +28,42 @@
 	     <!--Modernizr-->
 	     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body class="index">
+    <body class="index" ng-controller="MainCtrl">
 
       <header class="head">
         <div class="wrap">
           <nav class="menu-top">
             <ul>
               <li class="logo"><a href="alunos.html"><img src="img/logo-powerup.png" alt="PowerUp"></a></li>
+              <li ng-show="!showSignInButton()"><a href="alunos.html">Alunos</a></li>
+              <li ng-show="!showSignInButton()"><a href="exercicios.html">Exercícios</a></li>
             </ul>
           </nav>
+
+          <div ng-cloak ng-show="!showSignInButton()" class="prof-nome">
+            <p ng-cloak>{{user.displayName}}<br>
+            <a ng-cloak href="#" ng-click="logout()"  >Sair</a></p>
+            <img ng-cloak ng-src="{{user.image.url}}" class="professor" alt="Jhon Doe">
+          </div>
         </div>
       </header>
 
+      <div ng-cloak ng-show="!showSignInButton()" class="barra-top">
+        <div ng-cloak class="wrap">
+          <h1><img src="img/icone-roldana.png" alt=""> Alunos</h1>
 
-      <section class="home">
-        <div class="wrap">
-          <img src="img/mockup.png" class="mockup" alt="PowerUp">
-
-          <div class="texto-home">
-            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</h1>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad. </p>
-
-            <form class="login" method="get" name="form-login">
-              <input type="text" name="login" placeholder="login">
-              <input type="password" name="senha" placeholder="senha">
-              <input type="submit" name="submit" value="Entrar">
+          <div ng-cloak class="itens-direita">
+            <form class="form-busca">
+              <input type="text" placeholder="Buscar aluno" class="busca" id="busca-aluno" name="busca-aluno">
             </form>
+
+            <a ng-cloak class="botao novo-aluno" href="novo-aluno.html">+ Novo Aluno</a>
           </div>
         </div>
-      </section>
+      </div>      
+      
 
+	 <div ng-view></div>
 
       <footer class="footer">
         <div class="wrap">
@@ -73,14 +82,13 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+		<script type="text/javascript">
+		    function init() {
+		        angular.bootstrap(document,['powerup-admin']);
+		    }
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+		<script src="js/powerup-admin.js"></script>
+		<script src="//apis.google.com/js/client.js?onload=init"></script>        
     </body>
 </html>
