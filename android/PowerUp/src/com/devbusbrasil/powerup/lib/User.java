@@ -16,6 +16,7 @@ public class User {
 	private String mName;
 	private String mImageUrl;
 	private PlusClient mPlusClient;
+	private String mLevel;
 	
 	public String getId() {
 		return mId;
@@ -40,6 +41,12 @@ public class User {
 	}
 	public void setPlusClient(PlusClient pPlusClient) {
 		this.mPlusClient = pPlusClient;
+	}
+	public String getLevel() {
+		return mLevel;
+	}
+	public void setLevel(String pLevel) {
+		this.mLevel = pLevel;
 	}
 	
 	public User() {

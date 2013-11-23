@@ -80,19 +80,26 @@ public class Home extends Activity implements View.OnClickListener {
 	
 	private void updateScrollView() {
 
-		// list
 		TableLayout ll = (TableLayout) findViewById(R.id.tableLayoutList);
         View mTableRow = null;
 
 		for (int i = 0; i < Training.GetInstance().getTrainingList().size(); i++) {
 			TrainingItem trainingItem = (TrainingItem)Training.GetInstance().getTrainingList().get(i);
-			//Log.w("POWERUP", "LIST [" + i + "] = " + trainingItem.getId());
-			
-			// item
+
 			mTableRow = (RelativeLayout) View.inflate(this, R.layout.view_item, null);
-        	//mTableRow = (TableRow) View.inflate(this, R.layout.list_row, null);
+			
         	TextView tv = (TextView)mTableRow.findViewById(R.id.myImageViewText);
             tv.setText(trainingItem.getName());
+            
+            TextView duration = (TextView)mTableRow.findViewById(R.id.trainingDuration);
+            duration.setText("" + trainingItem.getDuration());
+            
+            TextView weight = (TextView)mTableRow.findViewById(R.id.trainingWeight);
+            weight.setText("" + trainingItem.getWeight());
+            
+            TextView cycle = (TextView)mTableRow.findViewById(R.id.trainingCycle);
+            cycle.setText("" + trainingItem.getRepeate());
+            
             mTableRow.setTag(i);
             ll.addView(mTableRow);
 		}
@@ -106,6 +113,13 @@ public class Home extends Activity implements View.OnClickListener {
         if (plusClient != null) {
         	TextView tv = (TextView)findViewById(R.id.gplusName);
             tv.setText(plusClient.getCurrentPerson().getDisplayName());
+            
+            TextView level = (TextView)findViewById(R.id.userLevel);
+            level.setText("NêVEL " + User.GetInstance().getLevel());
+            
+            TextView training = (TextView)findViewById(R.id.userTraining);
+            training.setText(Training.GetInstance().getCompleted() + " / " +
+            		Training.GetInstance().getTrainingList().size() + " EXERCêCIOS");
             
             ImageButton ib = (ImageButton)findViewById(R.id.gplusImage);
             Picasso.with(this)
