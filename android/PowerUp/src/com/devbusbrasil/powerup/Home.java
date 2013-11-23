@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -25,10 +26,17 @@ import android.widget.Toast;
 
 public class Home extends Activity implements View.OnClickListener {
 
+	private static Home mInstance;
+	public static Home GetInstance() {
+		return mInstance;
+	}
+	
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mInstance = this;
         
         try {
 	        NetworkManager.GetInstance().UpdateTraining();
@@ -42,6 +50,9 @@ public class Home extends Activity implements View.OnClickListener {
         
         // camera
         findViewById(R.id.buttonCamera).setOnClickListener(this);
+        
+        // achievement
+        findViewById(R.id.achievement).setOnClickListener(this);
     }
     
     @Override
@@ -76,6 +87,10 @@ public class Home extends Activity implements View.OnClickListener {
 	        Intent i = new Intent(this, CameraTestActivity.class);
 	        startActivity(i);
 		}
+		else if (view.getId() == R.id.achievement) {
+			ImageView image = (ImageView)findViewById(R.id.achievement);
+			image.setVisibility(View.GONE);
+		}
 	}
 	
 	private void updateScrollView() {
@@ -92,13 +107,13 @@ public class Home extends Activity implements View.OnClickListener {
             tv.setText(trainingItem.getName());
             
             TextView duration = (TextView)mTableRow.findViewById(R.id.trainingDuration);
-            duration.setText("" + trainingItem.getDuration());
+            duration.setText("" + trainingItem.getDuration() + " s");
             
             TextView weight = (TextView)mTableRow.findViewById(R.id.trainingWeight);
-            weight.setText("" + trainingItem.getWeight());
+            weight.setText("" + trainingItem.getWeight() + " kg");
             
             TextView cycle = (TextView)mTableRow.findViewById(R.id.trainingCycle);
-            cycle.setText("" + trainingItem.getRepeate());
+            cycle.setText("" + trainingItem.getRepeate() + " x");
             
             mTableRow.setTag(i);
             ll.addView(mTableRow);

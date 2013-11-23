@@ -87,4 +87,12 @@
 	    android:textColor="@color/green"
 	    android:textAppearance="?android:attr/textAppearanceSmall" />
 
+	<ImageView
+	    android:id="@+id/achievement"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/achievement1"
+	    android:background="@color/transparent"
+	    android:visibility="invisible" />
+
 </RelativeLayout>
