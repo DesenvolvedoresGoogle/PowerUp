@@ -72,9 +72,6 @@ PlusClient.ConnectionCallbacks, PlusClient.OnConnectionFailedListener, PlusClien
         SharedPreferences.Editor edit = prefs.edit();
         edit.putBoolean("SIGNED_IN", true);
         edit.commit();
-
-        Log.d("Plustest", "Logged in as: " + currentPersonName);
-        Log.d("Plustest", "ID: " + mPlusClient.getCurrentPerson().getId());
         
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);

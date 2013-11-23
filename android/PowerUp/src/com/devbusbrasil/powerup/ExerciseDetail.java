@@ -17,7 +17,7 @@ public class ExerciseDetail extends Activity {
         TrainingItem trainingItem = QRCode.GetInstance().getTrainingItem();
         QRCode.GetInstance().setCode(null);
         
-        TextView tv = (TextView)findViewById(R.id.textView1);
+        TextView tv = (TextView)findViewById(R.id.trainingText);
         
         if (trainingItem != null) {
             tv.setText(trainingItem.getText());

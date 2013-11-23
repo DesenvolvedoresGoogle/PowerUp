@@ -37,7 +37,7 @@ public class TrainingItem {
 	public void setImageUrl(String pImageUrl) {
 		this.mImageUrl = pImageUrl;
 	}
-	public int getmRepeate() {
+	public int getRepeate() {
 		return mRepeate;
 	}
 	public void setRepeate(int pRepeate) {
