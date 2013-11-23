@@ -23,7 +23,6 @@ public class ExerciseDetail extends Activity {
             tv.setText(trainingItem.getText());
         }
         else {
-            
             tv.setText("N‹o encontrado");
         }
     }

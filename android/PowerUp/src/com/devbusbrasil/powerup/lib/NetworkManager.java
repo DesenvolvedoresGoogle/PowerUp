@@ -57,7 +57,7 @@ public class NetworkManager {
 			if (list.size() > 0) {
 				for (int i = 0; i < list.size(); i++) {				
 					Exercise exercise = (Exercise)list.get(i);
-					Log.w("POWERUP", "LIST REAL [" + i + "] = " + exercise.getName());
+					Log.w("POWERUP", "LIST REAL [" + i + "] = " + exercise.getWorkoutDeviceId());
 					
 					Training.GetInstance().addExercise(new TrainingItem(exercise.getId(), 
 							exercise.getName(), exercise.getDescription(), exercise.getImageUrl(), exercise.getNumeroDeRepeticoes(),

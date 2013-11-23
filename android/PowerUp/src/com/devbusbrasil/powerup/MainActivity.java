@@ -5,14 +5,12 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
-
 public class MainActivity extends Activity {
 	
 	private static MainActivity mInstance;
 	public static MainActivity GetInstance() {
 		return mInstance;
 	}
-	
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {

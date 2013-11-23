@@ -3,6 +3,8 @@ package com.devbusbrasil.powerup.lib;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
+
 public class Training {
 	
 	private static Training mInstance;
@@ -37,9 +39,12 @@ public class Training {
 		this.mTrainingList.add(pTrainingItem);
 	}
 	
-	public TrainingItem findTrainingItem(String pId) {
+	public TrainingItem findTrainingItem(String pEquipment) {
 		for (int i = 0; i < mTrainingList.size(); i++) {
-			if (mTrainingList.get(i).getId() == pId) {
+			Log.w("POWERUP", i + " " + mTrainingList.get(i).getEquipment() + " " + pEquipment);
+			//if (mTrainingList.get(i).getEquipment().trim() == pEquipment.trim()) {
+			if (pEquipment.trim().equals(mTrainingList.get(i).getEquipment().trim())) {
+				Log.w("POWERUP", "HAHAHAHAHAHAHAHAHAHA");
 				return mTrainingList.get(i);
 			}
 		}
