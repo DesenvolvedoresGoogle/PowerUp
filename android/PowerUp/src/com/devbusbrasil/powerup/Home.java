@@ -41,7 +41,7 @@ public class Home extends Activity implements View.OnClickListener {
 		}
         
         // camera
-        findViewById(R.id.imageView3).setOnClickListener(this);
+        findViewById(R.id.buttonCamera).setOnClickListener(this);
     }
     
     @Override
@@ -72,7 +72,7 @@ public class Home extends Activity implements View.OnClickListener {
 
 	@Override
 	public void onClick(View view) {
-		if (view.getId() == R.id.imageView3 ) {
+		if (view.getId() == R.id.buttonCamera ) {
 	        Intent i = new Intent(this, CameraTestActivity.class);
 	        startActivity(i);
 		}

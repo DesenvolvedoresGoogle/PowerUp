@@ -6,20 +6,20 @@
     android:background="@color/gray" >
     
 	<ImageView
-	    android:id="@+id/imageView1"
+	    android:id="@+id/buttonMenu"
 	    android:layout_width="wrap_content"
 	    android:layout_height="50dp"
 	    android:src="@drawable/icone_menu" />
 	
 	<ImageView
-	    android:id="@+id/imageView2"
+	    android:id="@+id/logo"
 	    android:layout_width="wrap_content"
 	    android:layout_height="50dp"
 	    android:src="@drawable/logo_powerup"
 	    android:layout_centerHorizontal="true" />
 	
 	<ImageView
-	    android:id="@+id/imageView3"
+	    android:id="@+id/buttonCamera"
 	    android:layout_width="wrap_content"
 	    android:layout_height="50dp"
 	    android:layout_marginRight="10dp"
@@ -27,21 +27,21 @@
 	    android:layout_alignParentRight="true" />	
     
 	<View
-	    android:id="@+id/view1"
+	    android:id="@+id/socialInfo"
 	    android:layout_width="wrap_content"
 	    android:layout_height="120dp"
-	    android:layout_below="@+id/imageView2"
+	    android:layout_below="@+id/logo"
 	    android:background="@color/dark_gray"
 	    android:layout_centerHorizontal="true" />
 
 	<ScrollView
-	    android:id="@+id/scrollView1"
+	    android:id="@+id/scrollContent"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentBottom="true"
 	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentRight="true"
-	    android:layout_below="@+id/view1" >
+	    android:layout_below="@+id/socialInfo" >
 
  			<TableLayout
                 android:id="@+id/tableLayoutList"
@@ -54,7 +54,7 @@
 	    android:id="@+id/gplusImage"
 	    android:layout_width="120dp"
 	    android:layout_height="120dp"
-	    android:layout_above="@+id/scrollView1"
+	    android:layout_above="@+id/scrollContent"
 	    android:layout_alignParentLeft="true"
 	    android:src="@drawable/foto_usuario"
 	    android:background="@color/dark_gray" />
