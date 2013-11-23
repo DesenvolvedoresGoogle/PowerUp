@@ -12,6 +12,7 @@ import com.google.appengine.api.oauth.OAuthRequestException;
 import com.google.appengine.api.users.User;
 
 @Api(version = "v2")
+@Deprecated
 public class PowerUpApiV2 extends PowerUpApiV1 {
 
 	@Inject

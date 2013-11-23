@@ -20,6 +20,7 @@ import com.google.appengine.api.users.User;
 
 @Api(name = "treino", version = "v1", description = "Trainning log API", scopes = { Constants.EMAIL_SCOPE }, clientIds = {
 		com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID, Constants.WEB_CLIENT_ID, Constants.ANDROID_CLIENT_ID }, audiences = { Constants.ANDROID_AUDIENCE })
+@Deprecated
 public class PowerUpApiV1 {
 
 	private static final Logger LOGGER = Logger.getLogger(PowerUpApiV1.class.getName());
